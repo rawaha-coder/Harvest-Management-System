@@ -78,22 +78,16 @@ namespace Harvest_Management_System.Views
                 MessageBox.Show("Vérifier les valeurs");
                 return;
             }
-            mEmployee.EmployeeStatus = chackEmployeeStatus.Checked;
-            mEmployee.FirstName = txtFirstName.Text.ToUpper().Trim();
-            mEmployee.LastName = txtLastName.Text.ToUpper().Trim();
-            mEmployee.FireDate = dateFireDate.Value;
-            mEmployee.HireDate = dateHireDate.Value;
-            mEmployee.PermitDate = datePermissionDate.Value;
+            getEmployeeData();
             try
             {
-                mEmployeeDAO.Update(mEmployee);
+                mEmployeeDAO.UpdateEmployee(mEmployee);
+                MessageBox.Show("les informations sont mises à jour.", "Info", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Data Not Updated: " + ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.None);
-                return;
             }
-            MessageBox.Show("les informations sont mises à jour.", "Info", MessageBoxButtons.OK, MessageBoxIcon.None);
         }
 
         private void AddEmployee()
@@ -103,23 +97,25 @@ namespace Harvest_Management_System.Views
                 MessageBox.Show("Vérifier les valeurs");
                 return;
             }
-            Employee employee = new Employee();
-            employee.EmployeeStatus = chackEmployeeStatus.Checked;
-            employee.FirstName = txtFirstName.Text.ToUpper().Trim();
-            employee.LastName = txtLastName.Text.ToUpper().Trim();
-            employee.FireDate = dateFireDate.Value;
-            employee.HireDate = dateHireDate.Value;
-            employee.PermitDate = datePermissionDate.Value;
+            getEmployeeData();
             try
             {
-                mEmployeeDAO.Add(employee);
+                mEmployeeDAO.AddEmployee(mEmployee);
+                MessageBox.Show("Les information été ajouté à la base de données", "Info", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Product Not Added: " + ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.None);
-                return;
             }
-            MessageBox.Show("Les information été ajouté à la base de données");
+        }
+        private void getEmployeeData()
+        {
+            mEmployee.EmployeeStatus = chackEmployeeStatus.Checked;
+            mEmployee.FirstName = txtFirstName.Text.ToUpper().Trim();
+            mEmployee.LastName = txtLastName.Text.ToUpper().Trim();
+            mEmployee.FireDate = dateFireDate.Value;
+            mEmployee.HireDate = dateHireDate.Value;
+            mEmployee.PermitDate = datePermissionDate.Value;
         }
 
         private bool CheckInput()
@@ -170,6 +166,7 @@ namespace Harvest_Management_System.Views
             try
             {
                 mEmployee = listEmployee[e.RowIndex];
+                chackEmployeeStatus.Checked = mEmployee.EmployeeStatus;
                 txtFirstName.Text = mEmployee.FirstName;
                 txtLastName.Text = mEmployee.LastName;
                 dateHireDate.Value = mEmployee.HireDate;
@@ -210,7 +207,7 @@ namespace Harvest_Management_System.Views
                 MessageBox.Show("Select Employee required");
                 return;
             }
-            try { mEmployeeDAO.Delete(mEmployee); }
+            try { mEmployeeDAO.DeleteEmployee(mEmployee); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }

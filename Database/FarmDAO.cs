@@ -85,7 +85,7 @@ namespace Harvest_Management_System.Database
         public List<Farm> FarmList()
         {
             
-            var selectStmt = "SELECT * FROM " + TABLE_FARM + " ORDER BY " + COLUMN_FARM_NAME + " ASC;";
+            var selectStmt = "SELECT * FROM " + TABLE_FARM + " ORDER BY " + COLUMN_FARM_ID + " ASC;";
 
             try
             {

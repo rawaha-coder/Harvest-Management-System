@@ -31,46 +31,7 @@ namespace Harvest_Management_System.Database
             return instance;
         }
 
-        internal Dictionary<string, Employee> EmployeeDictionary()
-        {
-            Dictionary<string, Employee> employeeDictionary = new Dictionary<string, Employee>();
-
-            string selectStmt = "SELECT * FROM " + TABLE_EMPLOYEE + " ORDER BY " + COLUMN_EMPLOYEE_FIRST_NAME + " ASC;";
-
-            try
-            {
-                SQLiteCommand sQLiteCommand = new SQLiteCommand(selectStmt, mSQLiteConnection);
-                OpenConnection();
-                SQLiteDataReader result = sQLiteCommand.ExecuteReader();
-                if (result.HasRows)
-                {
-                    while (result.Read())
-                    {
-                        Employee employee = new Employee();
-                        employee.EmployeeId = result.GetInt32(result.GetOrdinal(COLUMN_EMPLOYEE_ID));
-                        employee.EmployeeStatus = result.GetBoolean(result.GetOrdinal(COLUMN_EMPLOYEE_STATUS));
-                        employee.FirstName = result.GetString(result.GetOrdinal(COLUMN_EMPLOYEE_FIRST_NAME));
-                        employee.LastName = result.GetString(result.GetOrdinal(COLUMN_EMPLOYEE_LAST_NAME));
-                        employee.HireDate = result.GetDateTime(result.GetOrdinal(COLUMN_EMPLOYEE_HIRE_DATE));
-                        employee.FireDate = result.GetDateTime(result.GetOrdinal(COLUMN_EMPLOYEE_FIRE_DATE));
-                        employee.PermitDate = result.GetDateTime(result.GetOrdinal(COLUMN_EMPLOYEE_PERMIT_DATE));
-                        employeeDictionary.Add(employee.FullName, employee);
-                    }
-                }
-                return employeeDictionary;
-            }
-            catch (SQLiteException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
-
-
-        internal void Update(Employee employee)
+        internal void UpdateEmployee(Employee employee)
         {
             var updateStmt = "UPDATE " + TABLE_EMPLOYEE + " SET "
                  + COLUMN_EMPLOYEE_STATUS + " =@" + COLUMN_EMPLOYEE_STATUS + ", "
@@ -104,7 +65,7 @@ namespace Harvest_Management_System.Database
             }
         }
 
-        public void Add(Employee employee)
+        public void AddEmployee(Employee employee)
         {
             string insertStmt = "INSERT INTO " + TABLE_EMPLOYEE + " ("
                     + COLUMN_EMPLOYEE_STATUS + ", "
@@ -146,7 +107,7 @@ namespace Harvest_Management_System.Database
         public List<Employee> ListEmployee()
         {
             List<Employee> list = new List<Employee>();
-            var selectStmt = "SELECT * FROM " + TABLE_EMPLOYEE + " ORDER BY " + COLUMN_EMPLOYEE_FIRST_NAME + " ASC;";
+            var selectStmt = "SELECT * FROM " + TABLE_EMPLOYEE + " ORDER BY " + COLUMN_EMPLOYEE_ID + " ASC;";
 
             try
             {
@@ -180,7 +141,7 @@ namespace Harvest_Management_System.Database
             }
         }
 
-        public void Delete(Employee employee)
+        public void DeleteEmployee(Employee employee)
         {
             var updateStmt = "DELETE FROM " + TABLE_EMPLOYEE + " WHERE " + COLUMN_EMPLOYEE_ID + " = " + employee.EmployeeId + " ";
 

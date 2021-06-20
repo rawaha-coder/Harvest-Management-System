@@ -29,22 +29,14 @@ namespace Harvest_Management_System.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlEmployeemanager = new System.Windows.Forms.Panel();
             this.pnlDisplayEmployee = new System.Windows.Forms.Panel();
             this.EmployeeDataGridView = new System.Windows.Forms.DataGridView();
-            this.employeeStatusColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.employeeIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeFullNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeFirstNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeLastNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeHireDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeFireDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeePermissionDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlDisplayCloseFire = new System.Windows.Forms.Panel();
             this.txtListEmployeeCloseFire = new System.Windows.Forms.TextBox();
             this.pnlAddEmployee = new System.Windows.Forms.Panel();
@@ -64,6 +56,14 @@ namespace Harvest_Management_System.Views
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.firstNameErrorLabel = new System.Windows.Forms.Label();
             this.lastNameErrorLabel = new System.Windows.Forms.Label();
+            this.employeeStatusColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.employeeIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeFullNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeFirstNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeLastNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeHireDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeFireDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeePermissionDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlEmployeemanager.SuspendLayout();
             this.pnlDisplayEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
@@ -80,7 +80,7 @@ namespace Harvest_Management_System.Views
             this.pnlEmployeemanager.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEmployeemanager.Location = new System.Drawing.Point(0, 0);
             this.pnlEmployeemanager.Name = "pnlEmployeemanager";
-            this.pnlEmployeemanager.Size = new System.Drawing.Size(1165, 705);
+            this.pnlEmployeemanager.Size = new System.Drawing.Size(1211, 705);
             this.pnlEmployeemanager.TabIndex = 0;
             // 
             // pnlDisplayEmployee
@@ -89,9 +89,9 @@ namespace Harvest_Management_System.Views
             this.pnlDisplayEmployee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlDisplayEmployee.Controls.Add(this.EmployeeDataGridView);
             this.pnlDisplayEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDisplayEmployee.Location = new System.Drawing.Point(245, 0);
+            this.pnlDisplayEmployee.Location = new System.Drawing.Point(227, 0);
             this.pnlDisplayEmployee.Name = "pnlDisplayEmployee";
-            this.pnlDisplayEmployee.Size = new System.Drawing.Size(721, 705);
+            this.pnlDisplayEmployee.Size = new System.Drawing.Size(815, 705);
             this.pnlDisplayEmployee.TabIndex = 37;
             // 
             // EmployeeDataGridView
@@ -101,23 +101,23 @@ namespace Harvest_Management_System.Views
             this.EmployeeDataGridView.AllowUserToOrderColumns = true;
             this.EmployeeDataGridView.AllowUserToResizeColumns = false;
             this.EmployeeDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            this.EmployeeDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            this.EmployeeDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.EmployeeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EmployeeDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.EmployeeDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmployeeDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(150)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(150)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(150)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(150)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.EmployeeDataGridView.ColumnHeadersHeight = 36;
             this.EmployeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.EmployeeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -129,15 +129,15 @@ namespace Harvest_Management_System.Views
             this.employeeHireDateColumn,
             this.employeeFireDateColumn,
             this.employeePermissionDateColumn});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployeeDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeeDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.EmployeeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeeDataGridView.EnableHeadersVisualStyles = false;
             this.EmployeeDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -145,94 +145,27 @@ namespace Harvest_Management_System.Views
             this.EmployeeDataGridView.MultiSelect = false;
             this.EmployeeDataGridView.Name = "EmployeeDataGridView";
             this.EmployeeDataGridView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.EmployeeDataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(233)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.EmployeeDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(233)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.EmployeeDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.EmployeeDataGridView.RowTemplate.Height = 25;
             this.EmployeeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmployeeDataGridView.Size = new System.Drawing.Size(717, 701);
+            this.EmployeeDataGridView.Size = new System.Drawing.Size(811, 701);
             this.EmployeeDataGridView.TabIndex = 2;
             this.EmployeeDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeDataGridView_CellDoubleClick);
-            // 
-            // employeeStatusColumn
-            // 
-            this.employeeStatusColumn.DataPropertyName = "EmployeeStatus";
-            this.employeeStatusColumn.HeaderText = "Etat";
-            this.employeeStatusColumn.MinimumWidth = 40;
-            this.employeeStatusColumn.Name = "employeeStatusColumn";
-            this.employeeStatusColumn.ReadOnly = true;
-            this.employeeStatusColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.employeeStatusColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // employeeIdColumn
-            // 
-            this.employeeIdColumn.DataPropertyName = "EmployeeId";
-            this.employeeIdColumn.HeaderText = "Id";
-            this.employeeIdColumn.MinimumWidth = 40;
-            this.employeeIdColumn.Name = "employeeIdColumn";
-            this.employeeIdColumn.ReadOnly = true;
-            // 
-            // employeeFullNameColumn
-            // 
-            this.employeeFullNameColumn.DataPropertyName = "FullName";
-            this.employeeFullNameColumn.HeaderText = "Employée";
-            this.employeeFullNameColumn.MinimumWidth = 200;
-            this.employeeFullNameColumn.Name = "employeeFullNameColumn";
-            this.employeeFullNameColumn.ReadOnly = true;
-            // 
-            // employeeFirstNameColumn
-            // 
-            this.employeeFirstNameColumn.DataPropertyName = "FirstName";
-            this.employeeFirstNameColumn.HeaderText = "Prénom";
-            this.employeeFirstNameColumn.MinimumWidth = 100;
-            this.employeeFirstNameColumn.Name = "employeeFirstNameColumn";
-            this.employeeFirstNameColumn.ReadOnly = true;
-            // 
-            // employeeLastNameColumn
-            // 
-            this.employeeLastNameColumn.DataPropertyName = "LastName";
-            this.employeeLastNameColumn.HeaderText = "Nom";
-            this.employeeLastNameColumn.MinimumWidth = 100;
-            this.employeeLastNameColumn.Name = "employeeLastNameColumn";
-            this.employeeLastNameColumn.ReadOnly = true;
-            // 
-            // employeeHireDateColumn
-            // 
-            this.employeeHireDateColumn.DataPropertyName = "HireDate";
-            this.employeeHireDateColumn.HeaderText = "Debut CTR";
-            this.employeeHireDateColumn.MinimumWidth = 80;
-            this.employeeHireDateColumn.Name = "employeeHireDateColumn";
-            this.employeeHireDateColumn.ReadOnly = true;
-            this.employeeHireDateColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // employeeFireDateColumn
-            // 
-            this.employeeFireDateColumn.DataPropertyName = "FireDate";
-            this.employeeFireDateColumn.HeaderText = "Fin CTR";
-            this.employeeFireDateColumn.MinimumWidth = 80;
-            this.employeeFireDateColumn.Name = "employeeFireDateColumn";
-            this.employeeFireDateColumn.ReadOnly = true;
-            // 
-            // employeePermissionDateColumn
-            // 
-            this.employeePermissionDateColumn.DataPropertyName = "PermitDate";
-            this.employeePermissionDateColumn.HeaderText = "SCDZP";
-            this.employeePermissionDateColumn.MinimumWidth = 80;
-            this.employeePermissionDateColumn.Name = "employeePermissionDateColumn";
-            this.employeePermissionDateColumn.ReadOnly = true;
             // 
             // pnlDisplayCloseFire
             // 
@@ -240,9 +173,9 @@ namespace Harvest_Management_System.Views
             this.pnlDisplayCloseFire.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlDisplayCloseFire.Controls.Add(this.txtListEmployeeCloseFire);
             this.pnlDisplayCloseFire.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlDisplayCloseFire.Location = new System.Drawing.Point(966, 0);
+            this.pnlDisplayCloseFire.Location = new System.Drawing.Point(1042, 0);
             this.pnlDisplayCloseFire.Name = "pnlDisplayCloseFire";
-            this.pnlDisplayCloseFire.Size = new System.Drawing.Size(199, 705);
+            this.pnlDisplayCloseFire.Size = new System.Drawing.Size(169, 705);
             this.pnlDisplayCloseFire.TabIndex = 36;
             // 
             // txtListEmployeeCloseFire
@@ -253,7 +186,7 @@ namespace Harvest_Management_System.Views
             this.txtListEmployeeCloseFire.Location = new System.Drawing.Point(0, 0);
             this.txtListEmployeeCloseFire.Multiline = true;
             this.txtListEmployeeCloseFire.Name = "txtListEmployeeCloseFire";
-            this.txtListEmployeeCloseFire.Size = new System.Drawing.Size(195, 701);
+            this.txtListEmployeeCloseFire.Size = new System.Drawing.Size(165, 701);
             this.txtListEmployeeCloseFire.TabIndex = 3;
             // 
             // pnlAddEmployee
@@ -278,7 +211,7 @@ namespace Harvest_Management_System.Views
             this.pnlAddEmployee.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlAddEmployee.Location = new System.Drawing.Point(0, 0);
             this.pnlAddEmployee.Name = "pnlAddEmployee";
-            this.pnlAddEmployee.Size = new System.Drawing.Size(245, 705);
+            this.pnlAddEmployee.Size = new System.Drawing.Size(227, 705);
             this.pnlAddEmployee.TabIndex = 34;
             // 
             // btnDelete
@@ -465,12 +398,79 @@ namespace Harvest_Management_System.Views
             this.lastNameErrorLabel.Text = "*";
             this.lastNameErrorLabel.Visible = false;
             // 
+            // employeeStatusColumn
+            // 
+            this.employeeStatusColumn.DataPropertyName = "EmployeeStatus";
+            this.employeeStatusColumn.HeaderText = "Etat";
+            this.employeeStatusColumn.MinimumWidth = 40;
+            this.employeeStatusColumn.Name = "employeeStatusColumn";
+            this.employeeStatusColumn.ReadOnly = true;
+            this.employeeStatusColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.employeeStatusColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // employeeIdColumn
+            // 
+            this.employeeIdColumn.DataPropertyName = "EmployeeId";
+            this.employeeIdColumn.HeaderText = "Id";
+            this.employeeIdColumn.MinimumWidth = 40;
+            this.employeeIdColumn.Name = "employeeIdColumn";
+            this.employeeIdColumn.ReadOnly = true;
+            // 
+            // employeeFullNameColumn
+            // 
+            this.employeeFullNameColumn.DataPropertyName = "FullName";
+            this.employeeFullNameColumn.HeaderText = "Employée";
+            this.employeeFullNameColumn.MinimumWidth = 160;
+            this.employeeFullNameColumn.Name = "employeeFullNameColumn";
+            this.employeeFullNameColumn.ReadOnly = true;
+            // 
+            // employeeFirstNameColumn
+            // 
+            this.employeeFirstNameColumn.DataPropertyName = "FirstName";
+            this.employeeFirstNameColumn.HeaderText = "Prénom";
+            this.employeeFirstNameColumn.MinimumWidth = 100;
+            this.employeeFirstNameColumn.Name = "employeeFirstNameColumn";
+            this.employeeFirstNameColumn.ReadOnly = true;
+            // 
+            // employeeLastNameColumn
+            // 
+            this.employeeLastNameColumn.DataPropertyName = "LastName";
+            this.employeeLastNameColumn.HeaderText = "Nom";
+            this.employeeLastNameColumn.MinimumWidth = 100;
+            this.employeeLastNameColumn.Name = "employeeLastNameColumn";
+            this.employeeLastNameColumn.ReadOnly = true;
+            // 
+            // employeeHireDateColumn
+            // 
+            this.employeeHireDateColumn.DataPropertyName = "HireDate";
+            this.employeeHireDateColumn.HeaderText = "Debut CTR";
+            this.employeeHireDateColumn.MinimumWidth = 80;
+            this.employeeHireDateColumn.Name = "employeeHireDateColumn";
+            this.employeeHireDateColumn.ReadOnly = true;
+            this.employeeHireDateColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // employeeFireDateColumn
+            // 
+            this.employeeFireDateColumn.DataPropertyName = "FireDate";
+            this.employeeFireDateColumn.HeaderText = "Fin CTR";
+            this.employeeFireDateColumn.MinimumWidth = 80;
+            this.employeeFireDateColumn.Name = "employeeFireDateColumn";
+            this.employeeFireDateColumn.ReadOnly = true;
+            // 
+            // employeePermissionDateColumn
+            // 
+            this.employeePermissionDateColumn.DataPropertyName = "PermitDate";
+            this.employeePermissionDateColumn.HeaderText = "SCDZP";
+            this.employeePermissionDateColumn.MinimumWidth = 80;
+            this.employeePermissionDateColumn.Name = "employeePermissionDateColumn";
+            this.employeePermissionDateColumn.ReadOnly = true;
+            // 
             // EmployeeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1165, 705);
+            this.ClientSize = new System.Drawing.Size(1211, 705);
             this.Controls.Add(this.pnlEmployeemanager);
             this.Name = "EmployeeManager";
             this.Text = "EmployeeManager";
@@ -491,14 +491,6 @@ namespace Harvest_Management_System.Views
         private System.Windows.Forms.Panel pnlEmployeemanager;
         private System.Windows.Forms.Panel pnlDisplayEmployee;
         private System.Windows.Forms.DataGridView EmployeeDataGridView;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn employeeStatusColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeFullNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeFirstNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeLastNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeHireDateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeFireDateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeePermissionDateColumn;
         private System.Windows.Forms.Panel pnlDisplayCloseFire;
         private System.Windows.Forms.TextBox txtListEmployeeCloseFire;
         private System.Windows.Forms.Panel pnlAddEmployee;
@@ -518,5 +510,13 @@ namespace Harvest_Management_System.Views
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label firstNameErrorLabel;
         private System.Windows.Forms.Label lastNameErrorLabel;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn employeeStatusColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeFullNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeFirstNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeLastNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeHireDateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeFireDateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeePermissionDateColumn;
     }
 }

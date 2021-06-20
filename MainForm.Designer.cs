@@ -36,8 +36,9 @@ namespace Harvest_Management_System
             this.pnlTopMenu = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.pnlLeftSide = new System.Windows.Forms.Panel();
-            this.btnCloseForm = new System.Windows.Forms.Button();
             this.btnUpdateSetting = new System.Windows.Forms.Button();
+            this.btnProductManager = new System.Windows.Forms.Button();
+            this.btnCloseForm = new System.Windows.Forms.Button();
             this.btnEmployeeManager = new System.Windows.Forms.Button();
             this.btnFarmManager = new System.Windows.Forms.Button();
             this.btnSupplierManager = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@ namespace Harvest_Management_System
             this.btnHarvestManagerCarrot = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnProductManager = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlMiddle.SuspendLayout();
             this.pnlChildForm.SuspendLayout();
@@ -67,7 +67,7 @@ namespace Harvest_Management_System
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1237, 746);
+            this.panel1.Size = new System.Drawing.Size(1284, 761);
             this.panel1.TabIndex = 0;
             // 
             // pnlMiddle
@@ -78,7 +78,7 @@ namespace Harvest_Management_System
             this.pnlMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMiddle.Location = new System.Drawing.Point(0, 0);
             this.pnlMiddle.Name = "pnlMiddle";
-            this.pnlMiddle.Size = new System.Drawing.Size(1072, 746);
+            this.pnlMiddle.Size = new System.Drawing.Size(1119, 761);
             this.pnlMiddle.TabIndex = 1;
             // 
             // pnlChildForm
@@ -88,7 +88,7 @@ namespace Harvest_Management_System
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChildForm.Location = new System.Drawing.Point(0, 42);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(1072, 704);
+            this.pnlChildForm.Size = new System.Drawing.Size(1119, 719);
             this.pnlChildForm.TabIndex = 1;
             // 
             // pictureBox2
@@ -99,7 +99,7 @@ namespace Harvest_Management_System
             this.pictureBox2.Image = global::Harvest_Management_System.Properties.Resources.Harvest;
             this.pictureBox2.Location = new System.Drawing.Point(306, 132);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(511, 406);
+            this.pictureBox2.Size = new System.Drawing.Size(558, 421);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -110,7 +110,7 @@ namespace Harvest_Management_System
             this.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlTopMenu.Name = "pnlTopMenu";
-            this.pnlTopMenu.Size = new System.Drawing.Size(1072, 42);
+            this.pnlTopMenu.Size = new System.Drawing.Size(1119, 42);
             this.pnlTopMenu.TabIndex = 0;
             // 
             // panelLeft
@@ -118,9 +118,9 @@ namespace Harvest_Management_System
             this.panelLeft.Controls.Add(this.pnlLeftSide);
             this.panelLeft.Controls.Add(this.pnlLogo);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelLeft.Location = new System.Drawing.Point(1072, 0);
+            this.panelLeft.Location = new System.Drawing.Point(1119, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(165, 746);
+            this.panelLeft.Size = new System.Drawing.Size(165, 761);
             this.panelLeft.TabIndex = 0;
             // 
             // pnlLeftSide
@@ -139,8 +139,29 @@ namespace Harvest_Management_System
             this.pnlLeftSide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLeftSide.Location = new System.Drawing.Point(0, 142);
             this.pnlLeftSide.Name = "pnlLeftSide";
-            this.pnlLeftSide.Size = new System.Drawing.Size(165, 604);
+            this.pnlLeftSide.Size = new System.Drawing.Size(165, 619);
             this.pnlLeftSide.TabIndex = 2;
+            // 
+            // btnUpdateSetting
+            // 
+            this.btnUpdateSetting.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUpdateSetting.Location = new System.Drawing.Point(0, 405);
+            this.btnUpdateSetting.Name = "btnUpdateSetting";
+            this.btnUpdateSetting.Size = new System.Drawing.Size(165, 45);
+            this.btnUpdateSetting.TabIndex = 11;
+            this.btnUpdateSetting.Text = "Paramètres";
+            this.btnUpdateSetting.UseVisualStyleBackColor = true;
+            // 
+            // btnProductManager
+            // 
+            this.btnProductManager.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProductManager.Location = new System.Drawing.Point(0, 360);
+            this.btnProductManager.Name = "btnProductManager";
+            this.btnProductManager.Size = new System.Drawing.Size(165, 45);
+            this.btnProductManager.TabIndex = 57;
+            this.btnProductManager.Text = "Gestion des produits";
+            this.btnProductManager.UseVisualStyleBackColor = true;
+            this.btnProductManager.Click += new System.EventHandler(this.btnProductManager_Click);
             // 
             // btnCloseForm
             // 
@@ -157,16 +178,6 @@ namespace Harvest_Management_System
             this.btnCloseForm.Text = "X";
             this.btnCloseForm.UseVisualStyleBackColor = false;
             this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
-            // 
-            // btnUpdateSetting
-            // 
-            this.btnUpdateSetting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdateSetting.Location = new System.Drawing.Point(0, 405);
-            this.btnUpdateSetting.Name = "btnUpdateSetting";
-            this.btnUpdateSetting.Size = new System.Drawing.Size(165, 45);
-            this.btnUpdateSetting.TabIndex = 11;
-            this.btnUpdateSetting.Text = "Paramètres";
-            this.btnUpdateSetting.UseVisualStyleBackColor = true;
             // 
             // btnEmployeeManager
             // 
@@ -271,23 +282,12 @@ namespace Harvest_Management_System
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnProductManager
-            // 
-            this.btnProductManager.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProductManager.Location = new System.Drawing.Point(0, 360);
-            this.btnProductManager.Name = "btnProductManager";
-            this.btnProductManager.Size = new System.Drawing.Size(165, 45);
-            this.btnProductManager.TabIndex = 57;
-            this.btnProductManager.Text = "Gestion des produits";
-            this.btnProductManager.UseVisualStyleBackColor = true;
-            this.btnProductManager.Click += new System.EventHandler(this.btnProductManager_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1237, 746);
+            this.ClientSize = new System.Drawing.Size(1284, 761);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.Text = "Harvest Managment System ";

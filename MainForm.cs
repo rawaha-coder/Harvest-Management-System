@@ -17,7 +17,7 @@ namespace Harvest_Management_System
     public partial class MainForm : Form
     {
         private Form activeForm = null;
-        FarmDAO f = FarmDAO.getInstance();
+        SupplierDAO s = SupplierDAO.getInstance();
         public MainForm()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace Harvest_Management_System
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            f.CreateTable();
+            //s.CreateTable();
         }
 
         private void btnCloseForm_Click(object sender, EventArgs e)
