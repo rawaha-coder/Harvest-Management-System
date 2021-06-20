@@ -63,9 +63,49 @@ namespace Harvest_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _585ea7cecb11b227491c353a {
+            get {
+                object obj = ResourceManager.GetObject("585ea7cecb11b227491c353a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Harvest {
             get {
                 object obj = ResourceManager.GetObject("Harvest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navet_long_510x510 {
+            get {
+                object obj = ResourceManager.GetObject("navet-long-510x510", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NicePng_carrot_png_207068 {
+            get {
+                object obj = ResourceManager.GetObject("NicePng_carrot-png_207068", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pastèque {
+            get {
+                object obj = ResourceManager.GetObject("pastèque", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

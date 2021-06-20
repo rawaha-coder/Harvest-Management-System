@@ -17,7 +17,7 @@ namespace Harvest_Management_System
     public partial class MainForm : Form
     {
         private Form activeForm = null;
-        CarrotDAO c = CarrotDAO.getInstance();
+        FarmDAO f = FarmDAO.getInstance();
         public MainForm()
         {
             InitializeComponent();
@@ -25,7 +25,13 @@ namespace Harvest_Management_System
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            insertIntoDatabase();
+            f.CreateTable();
+        }
+
+        private void btnCloseForm_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
         }
 
         private void OpenChildForm(Form childForm)
@@ -40,27 +46,6 @@ namespace Harvest_Management_System
             pnlChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-        }
-
-        private void insertIntoDatabase()
-        {
-
-
-
-            //Carrot carrrot = new Carrot();
-            //carrrot.Type = 2;
-            //carrrot.Name = "TGR SW";
-            //carrrot.Code = "C5";
-            //carrrot.EmployeePrice = 0.1;
-            //carrrot.CompanyPrice = 0.2;
-            //try
-            //{
-            //    c.addNewProduct(carrrot);
-            //}catch(Exception ex)
-            //{
-            //    Logging.LogError(ex);
-            //}
-
         }
 
         private void btnEmployeeManager_Click(object sender, EventArgs e)
@@ -78,10 +63,9 @@ namespace Harvest_Management_System
             OpenChildForm(new SupplierManager());
         }
 
-        private void btnCloseForm_Click(object sender, EventArgs e)
+        private void btnProductManager_Click(object sender, EventArgs e)
         {
-            if (activeForm != null)
-                activeForm.Close();
+            OpenChildForm(new ProductManager());
         }
     }
 }

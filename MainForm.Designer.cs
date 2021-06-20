@@ -32,30 +32,31 @@ namespace Harvest_Management_System
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlMiddle = new System.Windows.Forms.Panel();
             this.pnlChildForm = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlTopMenu = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.pnlLeftSide = new System.Windows.Forms.Panel();
-            this.pnlLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEmployeeManager = new System.Windows.Forms.Button();
+            this.btnCloseForm = new System.Windows.Forms.Button();
             this.btnUpdateSetting = new System.Windows.Forms.Button();
+            this.btnEmployeeManager = new System.Windows.Forms.Button();
             this.btnFarmManager = new System.Windows.Forms.Button();
             this.btnSupplierManager = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnHarvestManagerCarrot = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.btnCloseForm = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnHarvestManagerCarrot = new System.Windows.Forms.Button();
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnProductManager = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlMiddle.SuspendLayout();
             this.pnlChildForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelLeft.SuspendLayout();
             this.pnlLeftSide.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -90,6 +91,19 @@ namespace Harvest_Management_System
             this.pnlChildForm.Size = new System.Drawing.Size(1072, 704);
             this.pnlChildForm.TabIndex = 1;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::Harvest_Management_System.Properties.Resources.Harvest;
+            this.pictureBox2.Location = new System.Drawing.Point(306, 132);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(511, 406);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // pnlTopMenu
             // 
             this.pnlTopMenu.AutoScroll = true;
@@ -111,8 +125,9 @@ namespace Harvest_Management_System
             // 
             // pnlLeftSide
             // 
-            this.pnlLeftSide.Controls.Add(this.btnCloseForm);
             this.pnlLeftSide.Controls.Add(this.btnUpdateSetting);
+            this.pnlLeftSide.Controls.Add(this.btnProductManager);
+            this.pnlLeftSide.Controls.Add(this.btnCloseForm);
             this.pnlLeftSide.Controls.Add(this.btnEmployeeManager);
             this.pnlLeftSide.Controls.Add(this.btnFarmManager);
             this.pnlLeftSide.Controls.Add(this.btnSupplierManager);
@@ -127,25 +142,31 @@ namespace Harvest_Management_System
             this.pnlLeftSide.Size = new System.Drawing.Size(165, 604);
             this.pnlLeftSide.TabIndex = 2;
             // 
-            // pnlLogo
+            // btnCloseForm
             // 
-            this.pnlLogo.Controls.Add(this.pictureBox1);
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(165, 142);
-            this.pnlLogo.TabIndex = 1;
+            this.btnCloseForm.BackColor = System.Drawing.Color.Red;
+            this.btnCloseForm.FlatAppearance.BorderSize = 0;
+            this.btnCloseForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Moccasin;
+            this.btnCloseForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseForm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCloseForm.Location = new System.Drawing.Point(6, 562);
+            this.btnCloseForm.Name = "btnCloseForm";
+            this.btnCloseForm.Size = new System.Drawing.Size(159, 30);
+            this.btnCloseForm.TabIndex = 56;
+            this.btnCloseForm.Text = "X";
+            this.btnCloseForm.UseVisualStyleBackColor = false;
+            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
             // 
-            // pictureBox1
+            // btnUpdateSetting
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Harvest_Management_System.Properties.Resources.Harvest;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 142);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnUpdateSetting.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUpdateSetting.Location = new System.Drawing.Point(0, 405);
+            this.btnUpdateSetting.Name = "btnUpdateSetting";
+            this.btnUpdateSetting.Size = new System.Drawing.Size(165, 45);
+            this.btnUpdateSetting.TabIndex = 11;
+            this.btnUpdateSetting.Text = "Paramètres";
+            this.btnUpdateSetting.UseVisualStyleBackColor = true;
             // 
             // btnEmployeeManager
             // 
@@ -157,16 +178,6 @@ namespace Harvest_Management_System
             this.btnEmployeeManager.Text = "Gestion des employés ";
             this.btnEmployeeManager.UseVisualStyleBackColor = true;
             this.btnEmployeeManager.Click += new System.EventHandler(this.btnEmployeeManager_Click);
-            // 
-            // btnUpdateSetting
-            // 
-            this.btnUpdateSetting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdateSetting.Location = new System.Drawing.Point(0, 360);
-            this.btnUpdateSetting.Name = "btnUpdateSetting";
-            this.btnUpdateSetting.Size = new System.Drawing.Size(165, 45);
-            this.btnUpdateSetting.TabIndex = 11;
-            this.btnUpdateSetting.Text = "Paramètres";
-            this.btnUpdateSetting.UseVisualStyleBackColor = true;
             // 
             // btnFarmManager
             // 
@@ -190,28 +201,15 @@ namespace Harvest_Management_System
             this.btnSupplierManager.UseVisualStyleBackColor = true;
             this.btnSupplierManager.Click += new System.EventHandler(this.btnSupplierManager_Click);
             // 
-            // pictureBox2
+            // button4
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::Harvest_Management_System.Properties.Resources.Harvest;
-            this.pictureBox2.Location = new System.Drawing.Point(306, 132);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(511, 406);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnHarvestManagerCarrot
-            // 
-            this.btnHarvestManagerCarrot.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHarvestManagerCarrot.Location = new System.Drawing.Point(0, 0);
-            this.btnHarvestManagerCarrot.Name = "btnHarvestManagerCarrot";
-            this.btnHarvestManagerCarrot.Size = new System.Drawing.Size(165, 45);
-            this.btnHarvestManagerCarrot.TabIndex = 14;
-            this.btnHarvestManagerCarrot.Text = "Gestion de récolte: carotte";
-            this.btnHarvestManagerCarrot.UseVisualStyleBackColor = true;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.Location = new System.Drawing.Point(0, 180);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(165, 45);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "Gestion de récolte: Heures";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -223,16 +221,6 @@ namespace Harvest_Management_System
             this.button1.Text = "Gestion de récolte: Pastéque";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 45);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Gestion de récolte: Navet rond";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -243,31 +231,56 @@ namespace Harvest_Management_System
             this.button3.Text = "Gestion de récolte: Navet long";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // button2
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(0, 180);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(165, 45);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Gestion de récolte: Heures";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 45);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(165, 45);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Gestion de récolte: Navet rond";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // btnCloseForm
+            // btnHarvestManagerCarrot
             // 
-            this.btnCloseForm.BackColor = System.Drawing.Color.Red;
-            this.btnCloseForm.FlatAppearance.BorderSize = 0;
-            this.btnCloseForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Moccasin;
-            this.btnCloseForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
-            this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseForm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCloseForm.Location = new System.Drawing.Point(6, 562);
-            this.btnCloseForm.Name = "btnCloseForm";
-            this.btnCloseForm.Size = new System.Drawing.Size(159, 30);
-            this.btnCloseForm.TabIndex = 56;
-            this.btnCloseForm.Text = "X";
-            this.btnCloseForm.UseVisualStyleBackColor = false;
-            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
+            this.btnHarvestManagerCarrot.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHarvestManagerCarrot.Location = new System.Drawing.Point(0, 0);
+            this.btnHarvestManagerCarrot.Name = "btnHarvestManagerCarrot";
+            this.btnHarvestManagerCarrot.Size = new System.Drawing.Size(165, 45);
+            this.btnHarvestManagerCarrot.TabIndex = 14;
+            this.btnHarvestManagerCarrot.Text = "Gestion de récolte: carotte";
+            this.btnHarvestManagerCarrot.UseVisualStyleBackColor = true;
+            // 
+            // pnlLogo
+            // 
+            this.pnlLogo.Controls.Add(this.pictureBox1);
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(165, 142);
+            this.pnlLogo.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Harvest_Management_System.Properties.Resources.Harvest;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(165, 142);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnProductManager
+            // 
+            this.btnProductManager.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProductManager.Location = new System.Drawing.Point(0, 360);
+            this.btnProductManager.Name = "btnProductManager";
+            this.btnProductManager.Size = new System.Drawing.Size(165, 45);
+            this.btnProductManager.TabIndex = 57;
+            this.btnProductManager.Text = "Gestion des produits";
+            this.btnProductManager.UseVisualStyleBackColor = true;
+            this.btnProductManager.Click += new System.EventHandler(this.btnProductManager_Click);
             // 
             // MainForm
             // 
@@ -282,11 +295,11 @@ namespace Harvest_Management_System
             this.panel1.ResumeLayout(false);
             this.pnlMiddle.ResumeLayout(false);
             this.pnlChildForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelLeft.ResumeLayout(false);
             this.pnlLeftSide.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,6 +325,7 @@ namespace Harvest_Management_System
         private System.Windows.Forms.Button btnHarvestManagerCarrot;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnCloseForm;
+        private System.Windows.Forms.Button btnProductManager;
     }
 }
 
