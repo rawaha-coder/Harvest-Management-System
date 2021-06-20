@@ -1,5 +1,6 @@
 ﻿using Harvest_Management_System.Database;
 using Harvest_Management_System.Models;
+using Harvest_Management_System.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace Harvest_Management_System.Views
 
         private void EmployeeManager_Load(object sender, EventArgs e)
         {
-
+            DisplayEmployeeData();
         }
 
         public void DisplayEmployeeData()
@@ -38,7 +39,7 @@ namespace Harvest_Management_System.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logging.LogError(ex);
                 return;
             }
             EndCotract();
