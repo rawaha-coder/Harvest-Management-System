@@ -67,5 +67,10 @@ namespace Harvest_Management_System
         {
             OpenChildForm(new ProductManager());
         }
+
+        private void btnHarvestCarrotManager_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new HarvestCarrotManager());
+        }
     }
 }

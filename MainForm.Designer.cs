@@ -46,7 +46,7 @@ namespace Harvest_Management_System
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnHarvestManagerCarrot = new System.Windows.Forms.Button();
+            this.btnHarvestCarrotManager = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -135,7 +135,7 @@ namespace Harvest_Management_System
             this.pnlLeftSide.Controls.Add(this.button1);
             this.pnlLeftSide.Controls.Add(this.button3);
             this.pnlLeftSide.Controls.Add(this.button2);
-            this.pnlLeftSide.Controls.Add(this.btnHarvestManagerCarrot);
+            this.pnlLeftSide.Controls.Add(this.btnHarvestCarrotManager);
             this.pnlLeftSide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLeftSide.Location = new System.Drawing.Point(0, 142);
             this.pnlLeftSide.Name = "pnlLeftSide";
@@ -252,15 +252,16 @@ namespace Harvest_Management_System
             this.button2.Text = "Gestion de récolte: Navet rond";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // btnHarvestManagerCarrot
+            // btnHarvestCarrotManager
             // 
-            this.btnHarvestManagerCarrot.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHarvestManagerCarrot.Location = new System.Drawing.Point(0, 0);
-            this.btnHarvestManagerCarrot.Name = "btnHarvestManagerCarrot";
-            this.btnHarvestManagerCarrot.Size = new System.Drawing.Size(165, 45);
-            this.btnHarvestManagerCarrot.TabIndex = 14;
-            this.btnHarvestManagerCarrot.Text = "Gestion de récolte: carotte";
-            this.btnHarvestManagerCarrot.UseVisualStyleBackColor = true;
+            this.btnHarvestCarrotManager.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHarvestCarrotManager.Location = new System.Drawing.Point(0, 0);
+            this.btnHarvestCarrotManager.Name = "btnHarvestCarrotManager";
+            this.btnHarvestCarrotManager.Size = new System.Drawing.Size(165, 45);
+            this.btnHarvestCarrotManager.TabIndex = 14;
+            this.btnHarvestCarrotManager.Text = "Gestion de récolte: carotte";
+            this.btnHarvestCarrotManager.UseVisualStyleBackColor = true;
+            this.btnHarvestCarrotManager.Click += new System.EventHandler(this.btnHarvestCarrotManager_Click);
             // 
             // pnlLogo
             // 
@@ -322,7 +323,7 @@ namespace Harvest_Management_System
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnHarvestManagerCarrot;
+        private System.Windows.Forms.Button btnHarvestCarrotManager;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnCloseForm;
         private System.Windows.Forms.Button btnProductManager;
