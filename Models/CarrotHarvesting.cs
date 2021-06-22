@@ -22,6 +22,11 @@ namespace Harvest_Management_System.Models
         internal Employee Employee { get => employee; set => employee = value; }
         internal HarvestCarrot[] HarvestCarrots { get => harvestCarrots; set => harvestCarrots = value; }
 
+        public int EmployeeId
+        {
+            get => employee.EmployeeId;
+        }
+
         public string FullName
         {
             get => employee.FullName;
@@ -54,6 +59,28 @@ namespace Harvest_Management_System.Models
             get => harvestCarrots[4].Harvest.TotalQuantity;
         }
 
+        public double C1DQ
+        {
+            get => harvestCarrots[0].Harvest.DamagedQuantity;
+        }
+        public double C2DQ
+        {
+            get => harvestCarrots[1].Harvest.DamagedQuantity;
+        }
+        public double C3DQ
+        {
+            get => harvestCarrots[2].Harvest.DamagedQuantity;
+        }
+        public double C4DQ
+        {
+            get => harvestCarrots[3].Harvest.DamagedQuantity;
+        }
+
+        public double C5DQ
+        {
+            get => harvestCarrots[4].Harvest.DamagedQuantity;
+        }
+
         public double Quantity
         {
             get => totalQuantity();
@@ -62,11 +89,13 @@ namespace Harvest_Management_System.Models
         private double totalQuantity()
         {
             double tQ = 0;
+            double dQ = 0;
             for (int i = 0; i < HarvestCarrots.Length; i++)
             {
                 tQ += harvestCarrots[i].Harvest.TotalQuantity;
+                dQ += harvestCarrots[i].Harvest.DamagedQuantity;
             }
-            return tQ;
+            return tQ - dQ;
         }
 
         private void initCarrotHarvesting()
