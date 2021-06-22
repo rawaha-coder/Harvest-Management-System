@@ -13,37 +13,64 @@ namespace Harvest_Management_System.Utility
 {
     class FileExcelReader
     {
-        public static List<HarvestCarrot> readHarvestFile()
+        private static List<CarrotHarvesting> carrotHarvestingList = new List<CarrotHarvesting>();
+        private static OpenFileDialog openFileDialogForExcel = new OpenFileDialog();
+        public static List<CarrotHarvesting> openExcelFile()
         {
-            List<HarvestCarrot> HarvesterList = new List<HarvestCarrot>();
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Office Files|*.xlsx;*.xls;", ValidateNames = true })
+            openFileDialogForExcel.Reset();
+            openFileDialogForExcel.Filter = "Office files(*.xlsx;*.xls)|*.xlsx;*.xls| All files(*.*)|*.*";
+            openFileDialogForExcel.FilterIndex = 1;
+            openFileDialogForExcel.RestoreDirectory = true;
+            carrotHarvestingList.Clear();
+            if (openFileDialogForExcel.ShowDialog() == DialogResult.OK)
             {
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
+                readExcelFile(openFileDialogForExcel.FileName);
+            }
+            return carrotHarvestingList;
+        }
+
+        public static void readExcelFile(string filePath)
+        {
+
+                    FileStream fs = File.Open(filePath, FileMode.Open, FileAccess.Read);
                     IExcelDataReader reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
                     DataSet result = reader.AsDataSet();
                     DataTable tbl = result.Tables[0];
 
                     foreach (DataRow row in tbl.Rows)
                     {
+
                         if (row.ItemArray[0].ToString() == "ID") continue;
-                        HarvestCarrot hq = new HarvestCarrot();
+
+                        CarrotHarvesting carrotHarvesting = new CarrotHarvesting();
                         try
                         {
-                            hq.Harvest.TotalQuantity = (row.ItemArray[7].ToString() != null && !row.ItemArray[7].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[7].ToString()) : 0;
+                            carrotHarvesting.Employee.EmployeeId = (row.ItemArray[0].ToString() != null && !row.ItemArray[0].ToString().Equals("")) ? Convert.ToInt32(row.ItemArray[0].ToString()) : -1;
+                            carrotHarvesting.Employee.FirstName = row.ItemArray[1].ToString();
+
+
+                            carrotHarvesting.HarvestCarrots[0].Harvest.TotalQuantity = (row.ItemArray[2].ToString() != null && !row.ItemArray[2].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[2].ToString()) : 0;
+
+                            carrotHarvesting.HarvestCarrots[1].Harvest.TotalQuantity = (row.ItemArray[3].ToString() != null && !row.ItemArray[3].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[3].ToString()) : 0;
+
+                            carrotHarvesting.HarvestCarrots[2].Harvest.TotalQuantity = (row.ItemArray[4].ToString() != null && !row.ItemArray[4].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[4].ToString()) : 0;
+
+                            carrotHarvesting.HarvestCarrots[3].Harvest.TotalQuantity = (row.ItemArray[5].ToString() != null && !row.ItemArray[5].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[5].ToString()) : 0;
+
+                            carrotHarvesting.HarvestCarrots[4].Harvest.TotalQuantity = (row.ItemArray[6].ToString() != null && !row.ItemArray[6].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[6].ToString()) : 0;
+
+                            carrotHarvesting.EmployeeStatus = (carrotHarvesting.Quantity > 0) ? true : false;
+
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message);
                         }
 
-                        //if (hq.Harvest.TotalQuantity > 0 && hq.Employee.EmployeeId > 0) HarvesterList.Add(hq);
+                        carrotHarvestingList.Add(carrotHarvesting);
                     }
                     reader.Close();
-                }
-            }
-            return HarvesterList;
+                    fs.Close();
         }
 
         public static bool ScrambledEquals(List<int> x, List<int> y)

@@ -17,7 +17,7 @@ namespace Harvest_Management_System.Database
         public const string COLUMN_SUPPLIER_FIRSTNAME = "SupplierFirstName";
         public const string COLUMN_SUPPLIER_LASTNAME = "SupplierLastName";
 
-        private static SupplierDAO instance = new SupplierDAO();
+        private static SupplierDAO instance = null;
 
         private SupplierDAO() : base() { }
 
@@ -26,6 +26,44 @@ namespace Harvest_Management_System.Database
             if (instance == null)
                 instance = new SupplierDAO();
             return instance;
+        }
+
+        internal Dictionary<string, Supplier> SupplierDictionary()
+        {
+            Dictionary<string, Supplier> dictionary = new Dictionary<string, Supplier>();
+
+            string selectStmt = "SELECT * FROM " + TABLE_SUPPLIER + " ORDER BY " + COLUMN_SUPPLIER_NAME + " ASC;";
+
+            try
+            {
+                SQLiteCommand sQLiteCommand = new SQLiteCommand(selectStmt, mSQLiteConnection);
+                OpenConnection();
+                SQLiteDataReader result = sQLiteCommand.ExecuteReader();
+                if (result.HasRows)
+                {
+                    while (result.Read())
+                    {
+                        Supplier supplier = new Supplier()
+                        {
+                            SupplierId = result.GetInt32(result.GetOrdinal(COLUMN_SUPPLIER_ID)),
+                            SupplierStatus = result.GetBoolean(result.GetOrdinal(COLUMN_SUPPLIER_STATUS)),
+                            SupplierName = result.GetString(result.GetOrdinal(COLUMN_SUPPLIER_NAME)),
+                            SupplierFirstName = result.GetString(result.GetOrdinal(COLUMN_SUPPLIER_FIRSTNAME)),
+                            SupplierLastName = result.GetString(result.GetOrdinal(COLUMN_SUPPLIER_LASTNAME))
+                        };
+                        dictionary.Add(supplier.SupplierName, supplier);
+                    }
+                }
+                return dictionary;
+            }
+            catch (SQLiteException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
 
         public void AddSupplier(Supplier supplier)

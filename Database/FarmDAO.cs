@@ -124,6 +124,42 @@ namespace Harvest_Management_System.Database
             return list;
         }
 
+        internal Dictionary<string, Farm> FarmDictionary()
+        {
+            Dictionary<string, Farm> dictionary = new Dictionary<string, Farm>();
+            var selectStmt = "SELECT * FROM " + TABLE_FARM + " ORDER BY " + COLUMN_FARM_NAME + " ASC;";
+
+            try
+            {
+                SQLiteCommand sQLiteCommand = new SQLiteCommand(selectStmt, mSQLiteConnection);
+                OpenConnection();
+                SQLiteDataReader result = sQLiteCommand.ExecuteReader();
+                if (result.HasRows)
+                {
+                    while (result.Read())
+                    {
+                        Farm farm = new Farm();
+                        farm.Id = result.GetInt32(result.GetOrdinal(COLUMN_FARM_ID));
+                        farm.Name = result.GetString(result.GetOrdinal(COLUMN_FARM_NAME));
+                        farm.Address = result.GetString(result.GetOrdinal(COLUMN_FARM_ADDRESS));
+                        farm.Area = result.GetDouble(result.GetOrdinal(COLUMN_FARM_AREA));
+                        farm.PlantingDate = result.GetDateTime(result.GetOrdinal(COLUMN_FARM_PLANTING_DATE));
+                        farm.HarvestDate = result.GetDateTime(result.GetOrdinal(COLUMN_FARM_HARVEST_DATE));
+                        dictionary.Add(farm.Name, farm);
+                    }
+                }
+                return dictionary;
+            }
+            catch (SQLiteException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
         public void UpdateFarm(Farm farm)
         {
             string updateStmt = "UPDATE " + TABLE_FARM + " SET "
