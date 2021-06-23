@@ -78,7 +78,29 @@ namespace Harvest_Management_System.Models
 
         public double C5DQ
         {
-            get => harvestCarrots[4].Harvest.DamagedQuantity;
+            get =>  harvestCarrots[4].Harvest.DamagedQuantity;
+        }
+
+        public double C1GQ
+        {
+            get => harvestCarrots[0].Harvest.TotalQuantity - harvestCarrots[0].Harvest.DamagedQuantity;
+        }
+        public double C2GQ
+        {
+            get => harvestCarrots[1].Harvest.TotalQuantity - harvestCarrots[1].Harvest.DamagedQuantity;
+        }
+        public double C3GQ
+        {
+            get => harvestCarrots[2].Harvest.TotalQuantity - harvestCarrots[2].Harvest.DamagedQuantity;
+        }
+        public double C4GQ
+        {
+            get => harvestCarrots[3].Harvest.TotalQuantity - harvestCarrots[3].Harvest.DamagedQuantity;
+        }
+
+        public double C5GQ
+        {
+            get => harvestCarrots[4].Harvest.TotalQuantity - harvestCarrots[4].Harvest.DamagedQuantity;
         }
 
         public double Quantity
@@ -96,6 +118,21 @@ namespace Harvest_Management_System.Models
                 dQ += harvestCarrots[i].Harvest.DamagedQuantity;
             }
             return tQ - dQ;
+        }
+
+        public double Charge
+        {
+            get => totalCharge();
+        }
+
+        private double totalCharge()
+        {
+            double tC = 0;
+            for (int i = 0; i < HarvestCarrots.Length; i++)
+            {
+                tC += (harvestCarrots[i].Harvest.TotalQuantity - harvestCarrots[i].Harvest.DamagedQuantity) * harvestCarrots[i].Carrot.EmployeePrice;
+            }
+            return (double)System.Math.Round(tC,2);
         }
 
         private void initCarrotHarvesting()

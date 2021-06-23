@@ -48,7 +48,6 @@ namespace Harvest_Management_System.Utility
                             carrotHarvesting.Employee.EmployeeId = (row.ItemArray[0].ToString() != null && !row.ItemArray[0].ToString().Equals("")) ? Convert.ToInt32(row.ItemArray[0].ToString()) : -1;
                             carrotHarvesting.Employee.FirstName = row.ItemArray[1].ToString();
 
-
                             carrotHarvesting.HarvestCarrots[0].Harvest.TotalQuantity = (row.ItemArray[2].ToString() != null && !row.ItemArray[2].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[2].ToString()) : 0;
 
                             carrotHarvesting.HarvestCarrots[1].Harvest.TotalQuantity = (row.ItemArray[3].ToString() != null && !row.ItemArray[3].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[3].ToString()) : 0;
