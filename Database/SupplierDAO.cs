@@ -196,6 +196,7 @@ namespace Harvest_Management_System.Database
                 CloseConnection();
             }
         }
+
         public void CreateTable()
         {
             string createStmt = "CREATE TABLE IF NOT EXISTS " + TABLE_SUPPLIER + "("

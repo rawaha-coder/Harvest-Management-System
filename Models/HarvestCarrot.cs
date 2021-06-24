@@ -8,16 +8,16 @@ namespace Harvest_Management_System.Models
 {
     class HarvestCarrot
     {
-        Harvest harvest;
+        HarvestProduct product;
         Carrot carrot;
 
         public HarvestCarrot()
         {
-            harvest = new Harvest();
+            product = new HarvestProduct();
             carrot = new Carrot();
         }
 
-        internal Harvest Harvest { get => harvest;}
+        internal HarvestProduct Product { get => product;}
         internal Carrot Carrot { get => carrot;}
     }
 }

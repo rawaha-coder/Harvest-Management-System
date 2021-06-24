@@ -17,7 +17,7 @@ namespace Harvest_Management_System.Views
 {
     public partial class HarvestCarrotManager : Form
     {
-        private List<CarrotHarvesting> carrotHarvestingList = new List<CarrotHarvesting>();
+        private List<HarvestCarrotProduct> carrotHarvestingList = new List<HarvestCarrotProduct>();
         private TotalCarrotHarvested totalCarrotHarvested = new TotalCarrotHarvested();
         private SupplierDAO supplierDAO = SupplierDAO.getInstance();
         private FarmDAO farmDAO = FarmDAO.getInstance();
@@ -220,7 +220,7 @@ namespace Harvest_Management_System.Views
         {
             if (radioOpen.Checked)
             {
-                foreach(CarrotHarvesting ch in carrotHarvestingList)
+                foreach(HarvestCarrotProduct ch in carrotHarvestingList)
                 {
                     ch.HarvestCarrots[0].Carrot.EmployeePrice = carrots[1].EmployeePrice;
                     ch.HarvestCarrots[0].Carrot.CompanyPrice = carrots[1].CompanyPrice;
@@ -236,7 +236,7 @@ namespace Harvest_Management_System.Views
             }
             if (radioTunnel.Checked)
             {
-                foreach (CarrotHarvesting ch in carrotHarvestingList)
+                foreach (HarvestCarrotProduct ch in carrotHarvestingList)
                 {
                     ch.HarvestCarrots[0].Carrot.EmployeePrice = carrots[6].EmployeePrice;
                     ch.HarvestCarrots[0].Carrot.CompanyPrice = carrots[6].CompanyPrice;
@@ -252,5 +252,9 @@ namespace Harvest_Management_System.Views
             }
         }
 
+        private void btnApplyCarrotProduction_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
