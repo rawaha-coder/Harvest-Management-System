@@ -29,9 +29,16 @@ namespace Harvest_Management_System.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHarvestCarrotManager = new System.Windows.Forms.Panel();
             this.pnlMiddle = new System.Windows.Forms.Panel();
             this.panelDisplayTable = new System.Windows.Forms.Panel();
@@ -41,16 +48,23 @@ namespace Harvest_Management_System.Views
             this.ColumnFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnC1TQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnC1DQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnC1GQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnC2TQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnC2DQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnC2GQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnC3TQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnC3DQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnC3GQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnC4TQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnC4DQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnC4GQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnC5TQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnC5DQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnC5GQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBottom = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.txtC5DQ = new System.Windows.Forms.TextBox();
             this.txtC5TQ = new System.Windows.Forms.TextBox();
@@ -73,11 +87,15 @@ namespace Harvest_Management_System.Views
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtC1DQ = new System.Windows.Forms.TextBox();
+            this.txtChargeTotal = new System.Windows.Forms.TextBox();
             this.txtC1TQ = new System.Windows.Forms.TextBox();
             this.txtQuantityTotal = new System.Windows.Forms.TextBox();
             this.txtTotalEmployee = new System.Windows.Forms.TextBox();
             this.pnlLeftSide = new System.Windows.Forms.Panel();
-            this.ApplyHarvestQuantityButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioTunnel = new System.Windows.Forms.RadioButton();
+            this.radioOpen = new System.Windows.Forms.RadioButton();
+            this.btnApplyCarrotProduction = new System.Windows.Forms.Button();
             this.ClearHarvestButton = new System.Windows.Forms.Button();
             this.btnValidateHarvestQuantity = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -105,6 +123,7 @@ namespace Harvest_Management_System.Views
             ((System.ComponentModel.ISupportInitialize)(this.dgvHarvestCarrot)).BeginInit();
             this.pnlBottom.SuspendLayout();
             this.pnlLeftSide.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHarvestCarrotManager
@@ -132,7 +151,7 @@ namespace Harvest_Management_System.Views
             // panelDisplayTable
             // 
             this.panelDisplayTable.Controls.Add(this.dgvHarvestCarrot);
-            this.panelDisplayTable.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelDisplayTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDisplayTable.Location = new System.Drawing.Point(0, 0);
             this.panelDisplayTable.Name = "panelDisplayTable";
             this.panelDisplayTable.Size = new System.Drawing.Size(1013, 581);
@@ -143,6 +162,8 @@ namespace Harvest_Management_System.Views
             this.dgvHarvestCarrot.AllowUserToAddRows = false;
             this.dgvHarvestCarrot.AllowUserToDeleteRows = false;
             this.dgvHarvestCarrot.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvHarvestCarrot.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvHarvestCarrot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -150,14 +171,14 @@ namespace Harvest_Management_System.Views
             this.dgvHarvestCarrot.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvHarvestCarrot.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHarvestCarrot.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHarvestCarrot.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHarvestCarrot.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvHarvestCarrot.ColumnHeadersHeight = 30;
             this.dgvHarvestCarrot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvHarvestCarrot.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -166,37 +187,48 @@ namespace Harvest_Management_System.Views
             this.ColumnFullName,
             this.ColumnC1TQ,
             this.ColumnC1DQ,
+            this.ColumnC1GQ,
             this.ColumnC2TQ,
             this.ColumnC2DQ,
+            this.ColumnC2GQ,
             this.ColumnC3TQ,
             this.ColumnC3DQ,
+            this.ColumnC3GQ,
             this.ColumnC4TQ,
             this.ColumnC4DQ,
+            this.ColumnC4GQ,
             this.ColumnC5TQ,
             this.ColumnC5DQ,
-            this.ColumnQuantity});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHarvestCarrot.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ColumnC5GQ,
+            this.ColumnQuantity,
+            this.ColumnCharge});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHarvestCarrot.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvHarvestCarrot.Location = new System.Drawing.Point(6, 13);
             this.dgvHarvestCarrot.MultiSelect = false;
             this.dgvHarvestCarrot.Name = "dgvHarvestCarrot";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHarvestCarrot.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHarvestCarrot.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvHarvestCarrot.RowHeadersVisible = false;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvHarvestCarrot.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvHarvestCarrot.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvHarvestCarrot.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvHarvestCarrot.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dgvHarvestCarrot.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dgvHarvestCarrot.RowTemplate.Height = 25;
             this.dgvHarvestCarrot.Size = new System.Drawing.Size(995, 562);
             this.dgvHarvestCarrot.TabIndex = 9;
@@ -220,6 +252,8 @@ namespace Harvest_Management_System.Views
             // ColumnFullName
             // 
             this.ColumnFullName.DataPropertyName = "FullName";
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ColumnFullName.DefaultCellStyle = dataGridViewCellStyle13;
             this.ColumnFullName.FillWeight = 864.9746F;
             this.ColumnFullName.HeaderText = "Employee";
             this.ColumnFullName.MinimumWidth = 140;
@@ -228,41 +262,63 @@ namespace Harvest_Management_System.Views
             // ColumnC1TQ
             // 
             this.ColumnC1TQ.DataPropertyName = "C1TQ";
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.ColumnC1TQ.DefaultCellStyle = dataGridViewCellStyle14;
             this.ColumnC1TQ.FillWeight = 30.45685F;
             this.ColumnC1TQ.HeaderText = "TPC Nr T";
-            this.ColumnC1TQ.MinimumWidth = 70;
+            this.ColumnC1TQ.MinimumWidth = 80;
             this.ColumnC1TQ.Name = "ColumnC1TQ";
             // 
             // ColumnC1DQ
             // 
             this.ColumnC1DQ.DataPropertyName = "C1DQ";
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.ColumnC1DQ.DefaultCellStyle = dataGridViewCellStyle15;
             this.ColumnC1DQ.FillWeight = 30.45685F;
             this.ColumnC1DQ.HeaderText = "TPC Nr P";
-            this.ColumnC1DQ.MinimumWidth = 70;
+            this.ColumnC1DQ.MinimumWidth = 80;
             this.ColumnC1DQ.Name = "ColumnC1DQ";
+            // 
+            // ColumnC1GQ
+            // 
+            this.ColumnC1GQ.DataPropertyName = "C1GQ";
+            this.ColumnC1GQ.HeaderText = "TPC Nr V";
+            this.ColumnC1GQ.MinimumWidth = 80;
+            this.ColumnC1GQ.Name = "ColumnC1GQ";
             // 
             // ColumnC2TQ
             // 
             this.ColumnC2TQ.DataPropertyName = "C2TQ";
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ColumnC2TQ.DefaultCellStyle = dataGridViewCellStyle16;
             this.ColumnC2TQ.FillWeight = 30.45685F;
             this.ColumnC2TQ.HeaderText = "TPC 8-12 T";
-            this.ColumnC2TQ.MinimumWidth = 70;
+            this.ColumnC2TQ.MinimumWidth = 80;
             this.ColumnC2TQ.Name = "ColumnC2TQ";
             // 
             // ColumnC2DQ
             // 
             this.ColumnC2DQ.DataPropertyName = "C2DQ";
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.ColumnC2DQ.DefaultCellStyle = dataGridViewCellStyle17;
             this.ColumnC2DQ.FillWeight = 30.45685F;
             this.ColumnC2DQ.HeaderText = "TPC 8-12 P";
-            this.ColumnC2DQ.MinimumWidth = 70;
+            this.ColumnC2DQ.MinimumWidth = 80;
             this.ColumnC2DQ.Name = "ColumnC2DQ";
+            // 
+            // ColumnC2GQ
+            // 
+            this.ColumnC2GQ.DataPropertyName = "C2GQ";
+            this.ColumnC2GQ.HeaderText = "TPC 8-12 V";
+            this.ColumnC2GQ.MinimumWidth = 80;
+            this.ColumnC2GQ.Name = "ColumnC2GQ";
             // 
             // ColumnC3TQ
             // 
             this.ColumnC3TQ.DataPropertyName = "C3TQ";
             this.ColumnC3TQ.FillWeight = 30.45685F;
             this.ColumnC3TQ.HeaderText = "TGR Nr T";
-            this.ColumnC3TQ.MinimumWidth = 70;
+            this.ColumnC3TQ.MinimumWidth = 80;
             this.ColumnC3TQ.Name = "ColumnC3TQ";
             // 
             // ColumnC3DQ
@@ -270,15 +326,22 @@ namespace Harvest_Management_System.Views
             this.ColumnC3DQ.DataPropertyName = "C3DQ";
             this.ColumnC3DQ.FillWeight = 30.45685F;
             this.ColumnC3DQ.HeaderText = "TGR Nr P";
-            this.ColumnC3DQ.MinimumWidth = 70;
+            this.ColumnC3DQ.MinimumWidth = 80;
             this.ColumnC3DQ.Name = "ColumnC3DQ";
+            // 
+            // ColumnC3GQ
+            // 
+            this.ColumnC3GQ.DataPropertyName = "C3GQ";
+            this.ColumnC3GQ.HeaderText = "TGR Nr V";
+            this.ColumnC3GQ.MinimumWidth = 80;
+            this.ColumnC3GQ.Name = "ColumnC3GQ";
             // 
             // ColumnC4TQ
             // 
             this.ColumnC4TQ.DataPropertyName = "C4TQ";
             this.ColumnC4TQ.FillWeight = 30.45685F;
             this.ColumnC4TQ.HeaderText = "TGR 8-12 T";
-            this.ColumnC4TQ.MinimumWidth = 70;
+            this.ColumnC4TQ.MinimumWidth = 80;
             this.ColumnC4TQ.Name = "ColumnC4TQ";
             // 
             // ColumnC4DQ
@@ -286,15 +349,22 @@ namespace Harvest_Management_System.Views
             this.ColumnC4DQ.DataPropertyName = "C4DQ";
             this.ColumnC4DQ.FillWeight = 30.45685F;
             this.ColumnC4DQ.HeaderText = "TGR 8-12 P";
-            this.ColumnC4DQ.MinimumWidth = 70;
+            this.ColumnC4DQ.MinimumWidth = 80;
             this.ColumnC4DQ.Name = "ColumnC4DQ";
+            // 
+            // ColumnC4GQ
+            // 
+            this.ColumnC4GQ.DataPropertyName = "C4GQ";
+            this.ColumnC4GQ.HeaderText = "TGR 8-12 V";
+            this.ColumnC4GQ.MinimumWidth = 80;
+            this.ColumnC4GQ.Name = "ColumnC4GQ";
             // 
             // ColumnC5TQ
             // 
             this.ColumnC5TQ.DataPropertyName = "C5TQ";
             this.ColumnC5TQ.FillWeight = 30.45685F;
             this.ColumnC5TQ.HeaderText = "TGR SW T";
-            this.ColumnC5TQ.MinimumWidth = 70;
+            this.ColumnC5TQ.MinimumWidth = 80;
             this.ColumnC5TQ.Name = "ColumnC5TQ";
             // 
             // ColumnC5DQ
@@ -302,8 +372,15 @@ namespace Harvest_Management_System.Views
             this.ColumnC5DQ.DataPropertyName = "C5DQ";
             this.ColumnC5DQ.FillWeight = 30.45685F;
             this.ColumnC5DQ.HeaderText = "TGR SW P";
-            this.ColumnC5DQ.MinimumWidth = 70;
+            this.ColumnC5DQ.MinimumWidth = 80;
             this.ColumnC5DQ.Name = "ColumnC5DQ";
+            // 
+            // ColumnC5GQ
+            // 
+            this.ColumnC5GQ.DataPropertyName = "C5GQ";
+            this.ColumnC5GQ.HeaderText = "TGR SW V";
+            this.ColumnC5GQ.MinimumWidth = 80;
+            this.ColumnC5GQ.Name = "ColumnC5GQ";
             // 
             // ColumnQuantity
             // 
@@ -313,9 +390,17 @@ namespace Harvest_Management_System.Views
             this.ColumnQuantity.MinimumWidth = 100;
             this.ColumnQuantity.Name = "ColumnQuantity";
             // 
+            // ColumnCharge
+            // 
+            this.ColumnCharge.DataPropertyName = "Charge";
+            this.ColumnCharge.HeaderText = "Charge";
+            this.ColumnCharge.MinimumWidth = 100;
+            this.ColumnCharge.Name = "ColumnCharge";
+            // 
             // pnlBottom
             // 
             this.pnlBottom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlBottom.Controls.Add(this.label23);
             this.pnlBottom.Controls.Add(this.label16);
             this.pnlBottom.Controls.Add(this.txtC5DQ);
             this.pnlBottom.Controls.Add(this.txtC5TQ);
@@ -338,6 +423,7 @@ namespace Harvest_Management_System.Views
             this.pnlBottom.Controls.Add(this.label12);
             this.pnlBottom.Controls.Add(this.label10);
             this.pnlBottom.Controls.Add(this.txtC1DQ);
+            this.pnlBottom.Controls.Add(this.txtChargeTotal);
             this.pnlBottom.Controls.Add(this.txtC1TQ);
             this.pnlBottom.Controls.Add(this.txtQuantityTotal);
             this.pnlBottom.Controls.Add(this.txtTotalEmployee);
@@ -347,15 +433,25 @@ namespace Harvest_Management_System.Views
             this.pnlBottom.Size = new System.Drawing.Size(1013, 70);
             this.pnlBottom.TabIndex = 10;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(866, 14);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(72, 15);
+            this.label23.TabIndex = 44;
+            this.label23.Text = "Charge total";
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(750, 14);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(86, 15);
+            this.label16.Size = new System.Drawing.Size(80, 15);
             this.label16.TabIndex = 44;
-            this.label16.Text = "Quantité totale";
+            this.label16.Text = "Quantité total";
             // 
             // txtC5DQ
             // 
@@ -549,6 +645,14 @@ namespace Harvest_Management_System.Views
             this.txtC1DQ.Size = new System.Drawing.Size(60, 23);
             this.txtC1DQ.TabIndex = 32;
             // 
+            // txtChargeTotal
+            // 
+            this.txtChargeTotal.Enabled = false;
+            this.txtChargeTotal.Location = new System.Drawing.Point(866, 35);
+            this.txtChargeTotal.Name = "txtChargeTotal";
+            this.txtChargeTotal.Size = new System.Drawing.Size(90, 23);
+            this.txtChargeTotal.TabIndex = 26;
+            // 
             // txtC1TQ
             // 
             this.txtC1TQ.Enabled = false;
@@ -577,7 +681,8 @@ namespace Harvest_Management_System.Views
             // 
             this.pnlLeftSide.AutoScroll = true;
             this.pnlLeftSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlLeftSide.Controls.Add(this.ApplyHarvestQuantityButton);
+            this.pnlLeftSide.Controls.Add(this.groupBox1);
+            this.pnlLeftSide.Controls.Add(this.btnApplyCarrotProduction);
             this.pnlLeftSide.Controls.Add(this.ClearHarvestButton);
             this.pnlLeftSide.Controls.Add(this.btnValidateHarvestQuantity);
             this.pnlLeftSide.Controls.Add(this.label8);
@@ -605,16 +710,51 @@ namespace Harvest_Management_System.Views
             this.pnlLeftSide.Size = new System.Drawing.Size(193, 651);
             this.pnlLeftSide.TabIndex = 0;
             // 
-            // ApplyHarvestQuantityButton
+            // groupBox1
             // 
-            this.ApplyHarvestQuantityButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ApplyHarvestQuantityButton.ForeColor = System.Drawing.Color.Red;
-            this.ApplyHarvestQuantityButton.Location = new System.Drawing.Point(12, 595);
-            this.ApplyHarvestQuantityButton.Name = "ApplyHarvestQuantityButton";
-            this.ApplyHarvestQuantityButton.Size = new System.Drawing.Size(157, 34);
-            this.ApplyHarvestQuantityButton.TabIndex = 34;
-            this.ApplyHarvestQuantityButton.Text = "Appliquer ";
-            this.ApplyHarvestQuantityButton.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.radioTunnel);
+            this.groupBox1.Controls.Add(this.radioOpen);
+            this.groupBox1.Location = new System.Drawing.Point(13, 215);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(162, 44);
+            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabStop = false;
+            // 
+            // radioTunnel
+            // 
+            this.radioTunnel.AutoSize = true;
+            this.radioTunnel.ForeColor = System.Drawing.Color.White;
+            this.radioTunnel.Location = new System.Drawing.Point(83, 15);
+            this.radioTunnel.Name = "radioTunnel";
+            this.radioTunnel.Size = new System.Drawing.Size(62, 19);
+            this.radioTunnel.TabIndex = 10;
+            this.radioTunnel.Text = "Tunnel";
+            this.radioTunnel.UseVisualStyleBackColor = true;
+            // 
+            // radioOpen
+            // 
+            this.radioOpen.AutoSize = true;
+            this.radioOpen.Checked = true;
+            this.radioOpen.ForeColor = System.Drawing.Color.White;
+            this.radioOpen.Location = new System.Drawing.Point(16, 15);
+            this.radioOpen.Name = "radioOpen";
+            this.radioOpen.Size = new System.Drawing.Size(61, 19);
+            this.radioOpen.TabIndex = 10;
+            this.radioOpen.TabStop = true;
+            this.radioOpen.Text = "Aperto";
+            this.radioOpen.UseVisualStyleBackColor = true;
+            // 
+            // btnApplyCarrotProduction
+            // 
+            this.btnApplyCarrotProduction.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnApplyCarrotProduction.ForeColor = System.Drawing.Color.Red;
+            this.btnApplyCarrotProduction.Location = new System.Drawing.Point(12, 595);
+            this.btnApplyCarrotProduction.Name = "btnApplyCarrotProduction";
+            this.btnApplyCarrotProduction.Size = new System.Drawing.Size(157, 34);
+            this.btnApplyCarrotProduction.TabIndex = 34;
+            this.btnApplyCarrotProduction.Text = "Appliquer ";
+            this.btnApplyCarrotProduction.UseVisualStyleBackColor = true;
+            this.btnApplyCarrotProduction.Click += new System.EventHandler(this.btnApplyCarrotProduction_Click);
             // 
             // ClearHarvestButton
             // 
@@ -727,7 +867,7 @@ namespace Harvest_Management_System.Views
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 242);
+            this.label1.Location = new System.Drawing.Point(17, 269);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 15);
             this.label1.TabIndex = 21;
@@ -735,7 +875,7 @@ namespace Harvest_Management_System.Views
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 260);
+            this.textBox1.Location = new System.Drawing.Point(15, 287);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(160, 23);
             this.textBox1.TabIndex = 20;
@@ -829,6 +969,8 @@ namespace Harvest_Management_System.Views
             this.pnlBottom.PerformLayout();
             this.pnlLeftSide.ResumeLayout(false);
             this.pnlLeftSide.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -862,7 +1004,7 @@ namespace Harvest_Management_System.Views
         private System.Windows.Forms.TextBox txtC1DQ;
         private System.Windows.Forms.TextBox txtC1TQ;
         private System.Windows.Forms.TextBox txtTotalEmployee;
-        private System.Windows.Forms.Button ApplyHarvestQuantityButton;
+        private System.Windows.Forms.Button btnApplyCarrotProduction;
         private System.Windows.Forms.Button ClearHarvestButton;
         private System.Windows.Forms.Button btnValidateHarvestQuantity;
         private System.Windows.Forms.Panel panelDisplayTable;
@@ -888,19 +1030,30 @@ namespace Harvest_Management_System.Views
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtQuantityTotal;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioTunnel;
+        private System.Windows.Forms.RadioButton radioOpen;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtChargeTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEmployeeId;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnEmployeeStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC1TQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC1DQ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC1GQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC2TQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC2DQ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC2GQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC3TQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC3DQ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC3GQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC4TQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC4DQ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC4GQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC5TQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC5DQ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnC5GQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCharge;
     }
 }

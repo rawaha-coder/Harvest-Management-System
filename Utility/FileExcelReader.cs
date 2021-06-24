@@ -13,9 +13,9 @@ namespace Harvest_Management_System.Utility
 {
     class FileExcelReader
     {
-        private static List<CarrotHarvesting> carrotHarvestingList = new List<CarrotHarvesting>();
+        private static List<HarvestCarrotProduct> carrotHarvestingList = new List<HarvestCarrotProduct>();
         private static OpenFileDialog openFileDialogForExcel = new OpenFileDialog();
-        public static List<CarrotHarvesting> openExcelFile()
+        public static List<HarvestCarrotProduct> openExcelFile()
         {
             openFileDialogForExcel.Reset();
             openFileDialogForExcel.Filter = "Office files(*.xlsx;*.xls)|*.xlsx;*.xls| All files(*.*)|*.*";
@@ -42,22 +42,21 @@ namespace Harvest_Management_System.Utility
 
                         if (row.ItemArray[0].ToString() == "ID") continue;
 
-                        CarrotHarvesting carrotHarvesting = new CarrotHarvesting();
+                        HarvestCarrotProduct carrotHarvesting = new HarvestCarrotProduct();
                         try
                         {
                             carrotHarvesting.Employee.EmployeeId = (row.ItemArray[0].ToString() != null && !row.ItemArray[0].ToString().Equals("")) ? Convert.ToInt32(row.ItemArray[0].ToString()) : -1;
                             carrotHarvesting.Employee.FirstName = row.ItemArray[1].ToString();
 
+                            carrotHarvesting.HarvestCarrots[0].Product.TotalQuantity = (row.ItemArray[2].ToString() != null && !row.ItemArray[2].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[2].ToString()) : 0;
 
-                            carrotHarvesting.HarvestCarrots[0].Harvest.TotalQuantity = (row.ItemArray[2].ToString() != null && !row.ItemArray[2].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[2].ToString()) : 0;
+                            carrotHarvesting.HarvestCarrots[1].Product.TotalQuantity = (row.ItemArray[3].ToString() != null && !row.ItemArray[3].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[3].ToString()) : 0;
 
-                            carrotHarvesting.HarvestCarrots[1].Harvest.TotalQuantity = (row.ItemArray[3].ToString() != null && !row.ItemArray[3].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[3].ToString()) : 0;
+                            carrotHarvesting.HarvestCarrots[2].Product.TotalQuantity = (row.ItemArray[4].ToString() != null && !row.ItemArray[4].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[4].ToString()) : 0;
 
-                            carrotHarvesting.HarvestCarrots[2].Harvest.TotalQuantity = (row.ItemArray[4].ToString() != null && !row.ItemArray[4].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[4].ToString()) : 0;
+                            carrotHarvesting.HarvestCarrots[3].Product.TotalQuantity = (row.ItemArray[5].ToString() != null && !row.ItemArray[5].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[5].ToString()) : 0;
 
-                            carrotHarvesting.HarvestCarrots[3].Harvest.TotalQuantity = (row.ItemArray[5].ToString() != null && !row.ItemArray[5].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[5].ToString()) : 0;
-
-                            carrotHarvesting.HarvestCarrots[4].Harvest.TotalQuantity = (row.ItemArray[6].ToString() != null && !row.ItemArray[6].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[6].ToString()) : 0;
+                            carrotHarvesting.HarvestCarrots[4].Product.TotalQuantity = (row.ItemArray[6].ToString() != null && !row.ItemArray[6].ToString().Equals("")) ? Convert.ToDouble(row.ItemArray[6].ToString()) : 0;
 
                             carrotHarvesting.EmployeeStatus = (carrotHarvesting.Quantity > 0) ? true : false;
 

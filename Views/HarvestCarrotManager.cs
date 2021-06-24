@@ -17,14 +17,15 @@ namespace Harvest_Management_System.Views
 {
     public partial class HarvestCarrotManager : Form
     {
-        private List<CarrotHarvesting> carrotHarvestingList = new List<CarrotHarvesting>();
+        private List<HarvestCarrotProduct> carrotHarvestingList = new List<HarvestCarrotProduct>();
         private TotalCarrotHarvested totalCarrotHarvested = new TotalCarrotHarvested();
         private SupplierDAO supplierDAO = SupplierDAO.getInstance();
         private FarmDAO farmDAO = FarmDAO.getInstance();
         private Dictionary<string, Supplier> mSupplierDictionary = new Dictionary<string, Supplier>();
         private Dictionary<string, Farm> mFarmDictionary = new Dictionary<string, Farm>();
-
-        double test = 10;
+        Carrot[] carrots = null;
+        List<Carrot> carrotList = null;
+        CarrotDAO carrotDAO = null;
 
         public HarvestCarrotManager()
         {
@@ -81,9 +82,7 @@ namespace Harvest_Management_System.Views
         {
             try
             {
-                carrotHarvestingList = FileExcelReader.openExcelFile();
-                dgvHarvestCarrot.DataSource = carrotHarvestingList;
-                SortdgvHarvestCarrotColumnIndex();
+                openExcelFile();
             }
             catch (Exception ex)
             {
@@ -91,8 +90,17 @@ namespace Harvest_Management_System.Views
             }
         }
 
+        private void openExcelFile()
+        {
+            carrotHarvestingList = FileExcelReader.openExcelFile();
+            dgvHarvestCarrot.DataSource = carrotHarvestingList;
+            SortdgvHarvestCarrotColumnIndex();
+        }
+
         private void btnValidateHarvestQuantity_Click(object sender, EventArgs e)
         {
+            loadCarrotPrice();
+            getCarrotPrice();
             totalCarrotHarvested = Calculation.calculTotal(carrotHarvestingList);
             setFieldsvalue();
         }
@@ -111,6 +119,7 @@ namespace Harvest_Management_System.Views
             txtC5TQ.Text = totalCarrotHarvested.TotalQuantity[4].ToString();
             txtC5DQ.Text = totalCarrotHarvested.DamageQuantity[4].ToString();
             txtQuantityTotal.Text = totalCarrotHarvested.SumQuantity.ToString();
+            txtChargeTotal.Text = totalCarrotHarvested.Payment().ToString();
         }
 
         private void SortdgvHarvestCarrotColumnIndex()
@@ -122,15 +131,20 @@ namespace Harvest_Management_System.Views
                 dgvHarvestCarrot.Columns["ColumnFullName"].DisplayIndex = 2;
                 dgvHarvestCarrot.Columns["ColumnC1TQ"].DisplayIndex = 3;
                 dgvHarvestCarrot.Columns["ColumnC1DQ"].DisplayIndex = 4;
-                dgvHarvestCarrot.Columns["ColumnC2TQ"].DisplayIndex = 5;
-                dgvHarvestCarrot.Columns["ColumnC2DQ"].DisplayIndex = 6;
-                dgvHarvestCarrot.Columns["ColumnC3TQ"].DisplayIndex = 7;
-                dgvHarvestCarrot.Columns["ColumnC3DQ"].DisplayIndex = 8;
-                dgvHarvestCarrot.Columns["ColumnC4TQ"].DisplayIndex = 9;
-                dgvHarvestCarrot.Columns["ColumnC4DQ"].DisplayIndex = 10;
-                dgvHarvestCarrot.Columns["ColumnC5TQ"].DisplayIndex = 11;
-                dgvHarvestCarrot.Columns["ColumnC5DQ"].DisplayIndex = 12;
-                dgvHarvestCarrot.Columns["ColumnQuantity"].DisplayIndex = 13;
+                dgvHarvestCarrot.Columns["ColumnC1GQ"].DisplayIndex = 5;
+                dgvHarvestCarrot.Columns["ColumnC2TQ"].DisplayIndex = 6;
+                dgvHarvestCarrot.Columns["ColumnC2DQ"].DisplayIndex = 7;
+                dgvHarvestCarrot.Columns["ColumnC2GQ"].DisplayIndex = 8;
+                dgvHarvestCarrot.Columns["ColumnC3TQ"].DisplayIndex = 9;
+                dgvHarvestCarrot.Columns["ColumnC3DQ"].DisplayIndex = 10;
+                dgvHarvestCarrot.Columns["ColumnC3GQ"].DisplayIndex = 11;
+                dgvHarvestCarrot.Columns["ColumnC4TQ"].DisplayIndex = 12;
+                dgvHarvestCarrot.Columns["ColumnC4DQ"].DisplayIndex = 13;
+                dgvHarvestCarrot.Columns["ColumnC4GQ"].DisplayIndex = 14;
+                dgvHarvestCarrot.Columns["ColumnC5TQ"].DisplayIndex = 15;
+                dgvHarvestCarrot.Columns["ColumnC5DQ"].DisplayIndex = 16;
+                dgvHarvestCarrot.Columns["ColumnC5GQ"].DisplayIndex = 17;
+                dgvHarvestCarrot.Columns["ColumnQuantity"].DisplayIndex = 18;
             }catch(Exception ex)
             {
                 Logging.LogError(ex);
@@ -161,5 +175,86 @@ namespace Harvest_Management_System.Views
             SortdgvHarvestCarrotColumnIndex();
         }
 
+
+        private void loadCarrotPrice()
+        {
+
+            carrots = new Carrot[11];
+            carrotList = new List<Carrot>();
+            carrotDAO = CarrotDAO.getInstance();
+            initCarrotArray();
+            GetCarrotList();
+            SetCarrotArray();
+        }
+        private void initCarrotArray()
+        {
+            for (int i = 0; i < carrots.Length; i++)
+                carrots[i] = new Carrot();
+        }
+
+        private void GetCarrotList()
+        {
+            try
+            {
+                carrotList.Clear();
+                carrotList = carrotDAO.CarrotList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void SetCarrotArray()
+        {
+            if (carrotList.Count > 0)
+            {
+                foreach (Carrot carrot in carrotList)
+                {
+                    carrots[carrot.Id] = carrot;
+                }
+            }
+        }
+
+        private void getCarrotPrice()
+        {
+            if (radioOpen.Checked)
+            {
+                foreach(HarvestCarrotProduct ch in carrotHarvestingList)
+                {
+                    ch.HarvestCarrots[0].Carrot.EmployeePrice = carrots[1].EmployeePrice;
+                    ch.HarvestCarrots[0].Carrot.CompanyPrice = carrots[1].CompanyPrice;
+                    ch.HarvestCarrots[1].Carrot.EmployeePrice = carrots[2].EmployeePrice;
+                    ch.HarvestCarrots[1].Carrot.CompanyPrice = carrots[2].CompanyPrice;
+                    ch.HarvestCarrots[2].Carrot.EmployeePrice = carrots[3].EmployeePrice;
+                    ch.HarvestCarrots[2].Carrot.CompanyPrice = carrots[3].CompanyPrice;
+                    ch.HarvestCarrots[3].Carrot.EmployeePrice = carrots[4].EmployeePrice;
+                    ch.HarvestCarrots[3].Carrot.CompanyPrice = carrots[4].CompanyPrice;
+                    ch.HarvestCarrots[4].Carrot.EmployeePrice = carrots[5].EmployeePrice;
+                    ch.HarvestCarrots[4].Carrot.CompanyPrice = carrots[5].CompanyPrice;
+                }
+            }
+            if (radioTunnel.Checked)
+            {
+                foreach (HarvestCarrotProduct ch in carrotHarvestingList)
+                {
+                    ch.HarvestCarrots[0].Carrot.EmployeePrice = carrots[6].EmployeePrice;
+                    ch.HarvestCarrots[0].Carrot.CompanyPrice = carrots[6].CompanyPrice;
+                    ch.HarvestCarrots[1].Carrot.EmployeePrice = carrots[7].EmployeePrice;
+                    ch.HarvestCarrots[1].Carrot.CompanyPrice = carrots[7].CompanyPrice;
+                    ch.HarvestCarrots[2].Carrot.EmployeePrice = carrots[8].EmployeePrice;
+                    ch.HarvestCarrots[2].Carrot.CompanyPrice = carrots[8].CompanyPrice;
+                    ch.HarvestCarrots[3].Carrot.EmployeePrice = carrots[9].EmployeePrice;
+                    ch.HarvestCarrots[3].Carrot.CompanyPrice = carrots[9].CompanyPrice;
+                    ch.HarvestCarrots[4].Carrot.EmployeePrice = carrots[10].EmployeePrice;
+                    ch.HarvestCarrots[4].Carrot.CompanyPrice = carrots[10].CompanyPrice;
+                }
+            }
+        }
+
+        private void btnApplyCarrotProduction_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
